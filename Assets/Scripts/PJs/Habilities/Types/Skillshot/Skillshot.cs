@@ -21,7 +21,7 @@ public class Skillshot : MonoBehaviour
         {
             float transformHeight = transform.position.y;
             float floorHeight = hitAtk.point.y;
-            Vector3 point = hitAtk.point - new Vector3(transform.position.x, floorHeight, transform.position.z * -1);
+            Vector3 point = hitAtk.point - new Vector3(transform.position.x, floorHeight, transform.position.z);
             Vector3 direction = new Vector3(point.x, transformHeight, point.z);
             if (!addAceleration)
             {

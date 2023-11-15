@@ -656,6 +656,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 890180719664182089, guid: c4d4c5489b185c542a5457908e8b89a0, type: 3}
+      propertyPath: coolDownSegs
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 890180719664182089, guid: c4d4c5489b185c542a5457908e8b89a0, type: 3}
       propertyPath: textHability
       value: 
       objectReference: {fileID: 935729737}
