@@ -1,0 +1,16 @@
+{
+    "name": "Skillshot",
+    "rootNamespace": "",
+    "references": [
+        "GUID:cb8cca3aa34994b4489d909e16706396"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
