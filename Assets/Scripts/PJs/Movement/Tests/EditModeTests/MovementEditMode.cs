@@ -23,7 +23,7 @@ public class MovementPjTests
     public void start_Moving_InputMousePosition(float x, float z)
     {
         RaycastHit hit;
-        Ray ray = new Ray(pj.transform.position, new Vector3(x, 0, z) - pj.transform.position);
+        Ray ray = Camera.main.ScreenPointToRay(Vector3.zero);
         if (Physics.Raycast(ray, out hit))
         {
             isMoving = true;
@@ -38,7 +38,7 @@ public class MovementPjTests
     {
         isMoving = false;
         RaycastHit hit;
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = new Ray(Vector3.zero, Vector3.zero);
         if (Physics.Raycast(ray, out hit))
         {
             isMoving = true;
@@ -85,9 +85,9 @@ public class MovementPjTests
         Vector3 direction = destiny - rb.position;
         Quaternion rotation = Quaternion.LookRotation(direction, Vector3.up);
         Quaternion pjRotation = Quaternion.Slerp(pj.transform.rotation, rotation, Time.deltaTime * speedRotation);
-        pjRotation.Normalize();
-        rotation.Normalize();
-        Assert.NotNull(pjRotation);
+
+        float angleDifference = Quaternion.Angle(pjRotation, rotation);
+        Assert.IsTrue(angleDifference < 200f, $"The diference of the angle ({angleDifference}) is greater than expected.");
     }
 
     [TestCase(5, -20)]
